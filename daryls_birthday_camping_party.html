@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daryl's 57th Birthday Camping Celebration</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/tabler-icons.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+      background: linear-gradient(135deg, #f0f4f8 0%, #e8f1f7 100%);
+      color: var(--color-text-primary, #1a1a1a);
+      line-height: 1.7;
+    }
+    .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+    
+    header {
+      text-align: center;
+      padding: 3rem 0 2rem;
+      background: linear-gradient(135deg, #2c5aa0 0%, #1e7e9a 100%);
+      color: white;
+      border-radius: 16px;
+      margin-bottom: 2rem;
+      box-shadow: 0 10px 40px rgba(44, 90, 160, 0.2);
+      animation: slideDown 0.6s ease-out;
+    }
+    
+    header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; font-weight: 600; }
+    header .subtitle { font-size: 1.3rem; opacity: 0.95; margin-bottom: 1rem; }
+    header .dates { font-size: 1.1rem; opacity: 0.9; }
+    
+    section {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      animation: fadeIn 0.6s ease-out;
+    }
+    
+    h2 {
+      font-size: 1.8rem;
+      color: #2c5aa0;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    h3 { font-size: 1.2rem; color: #1e7e9a; margin-top: 1.5rem; margin-bottom: 0.8rem; }
+    h3:first-child { margin-top: 0; }
+    
+    .event-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .event-card {
+      background: linear-gradient(135deg, #f8f9fa 0%, #f0f4f8 100%);
+      padding: 1.5rem;
+      border-radius: 10px;
+      border-left: 4px solid #2c5aa0;
+      display: flex;
+      gap: 1rem;
+    }
+    
+    .event-card i {
+      font-size: 28px;
+      color: #2c5aa0;
+      flex-shrink: 0;
+    }
+    
+    .event-card div { flex-grow: 1; }
+    .event-card label { font-weight: 600; color: #1a1a1a; display: block; margin-bottom: 0.3rem; }
+    .event-card p { color: var(--color-text-secondary, #666); }
+    
+    .camping-options {
+      background: #f8f9fa;
+      padding: 1.5rem;
+      border-radius: 10px;
+      margin: 1rem 0;
+    }
+    
+    .option {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--color-border-tertiary, #e0e0e0);
+    }
+    
+    .option:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .option strong { color: #1e7e9a; font-size: 1.05rem; display: block; margin-bottom: 0.5rem; }
+    .option p { margin-bottom: 0.8rem; }
+    
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background: #2c5aa0;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      font-size: 0.95rem;
+      margin-top: 0.5rem;
+    }
+    
+    .btn:hover { background: #1e4470; transform: translateY(-2px); box-shadow: 0 6px 16px rgba(44, 90, 160, 0.3); }
+    
+    .spots {
+      background: #e8f1f7;
+      padding: 1.5rem;
+      border-radius: 10px;
+      margin: 1.5rem 0;
+      border-left: 4px solid #1e7e9a;
+    }
+    
+    .checklist {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    
+    .checklist-item {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 0.8rem;
+      background: white;
+      border-radius: 8px;
+      border: 1px solid var(--color-border-tertiary, #e0e0e0);
+    }
+    
+    .checklist-item i { color: #27a745; font-size: 20px; }
+    
+    .rsvp-section {
+      text-align: center;
+      background: linear-gradient(135deg, #2c5aa0 0%, #1e7e9a 100%);
+      color: white;
+      padding: 2rem;
+      border-radius: 12px;
+    }
+    
+    .rsvp-section h2 { color: white; justify-content: center; }
+    .rsvp-section p { font-size: 1.05rem; margin-bottom: 1.5rem; }
+    
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1rem;
+    }
+    
+    .contact-item a { color: white; text-decoration: none; font-weight: 500; }
+    .contact-item a:hover { text-decoration: underline; }
+    
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @media (max-width: 768px) {
+      header h1 { font-size: 2rem; }
+      .event-grid { grid-template-columns: 1fr; }
+      .contact-info { gap: 1rem; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🎉 Daryl's 57th Birthday</h1>
+      <p class="subtitle">Lakeside Camping Celebration</p>
+      <p class="dates">July 24–27, 2026</p>
+    </header>
+
+    <section>
+      <h2><i class="ti ti-calendar"></i> Event Details</h2>
+      <div class="event-grid">
+        <div class="event-card">
+          <i class="ti ti-calendar-event"></i>
+          <div>
+            <label>Party Date & Time</label>
+            <p>Sunday, July 26, 2026<br>10:00 AM – 9:00 PM</p>
+          </div>
+        </div>
+        <div class="event-card">
+          <i class="ti ti-map-pin"></i>
+          <div>
+            <label>Location</label>
+            <p>R. Shaefer Heard Day Use Area<br>West Point Lake, Lanett, Alabama</p>
+          </div>
+        </div>
+        <div class="event-card">
+          <i class="ti ti-clock"></i>
+          <div>
+            <label>Camping Dates</label>
+            <p>Check-in: 4:00 PM, July 24th<br>Check-out: 11:00 AM, July 27th</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2><i class="ti ti-tent"></i> Where to Stay</h2>
+      
+      <h3>Camping at R. Shaefer Heard</h3>
+      <div class="spots">
+        <strong>Reserved Spots in A Loop: 001 & 007</strong>
+        <p>Perfect lakeside location with water access, shade, and beautiful views. You can pitch a tent or park an RV!</p>
+      </div>
+
+      <h3>Accommodation Options</h3>
+      <div class="camping-options">
+        <div class="option">
+          <strong>🏕️ Tent Camping</strong>
+          <p>Bring your tent and experience the full camping adventure. Shaded, waterfront sites with facilities.</p>
+          <a href="https://www.recreation.gov/camping/campgrounds/232683" class="btn">Reserve Additional Spots</a>
+        </div>
+
+        <div class="option">
+          <strong>🚐 RV Rentals with Delivery</strong>
+          <p>No towing needed! The rental company delivers and sets up your RV right at your campsite.</p>
+          
+          <strong style="margin-top: 1rem; color: #1a1a1a; font-size: 0.95rem;">Auburn Camper Rentals (Local)</strong>
+          <p style="margin-bottom: 0.5rem;">Family-owned, deliver & setup service, East Alabama area</p>
+          <a href="https://auburncamperrentals.com/our-campers" class="btn">Browse Campers</a>
+
+          <strong style="margin-top: 1rem; color: #1a1a1a; font-size: 0.95rem;">Outdoorsy (AirBnB for RVs)</strong>
+          <p style="margin-bottom: 0.5rem;">Largest selection, delivery & setup available</p>
+          <a href="https://www.outdoorsy.com/rv-rental/georgia/west-point" class="btn">Browse RVs</a>
+
+          <strong style="margin-top: 1rem; color: #1a1a1a; font-size: 0.95rem;">RVezy (AirBnB for RVs)</strong>
+          <p style="margin-bottom: 0.5rem;">Competitive pricing, delivery to your campsite</p>
+          <a href="https://www.rvezy.com/rv-search?Adults=6&Children=2&SearchAddress=West+Point,+GA,+USA&StartDate=2026-07-24&EndDate=2026-07-27&Delivery" class="btn">Browse RVs</a>
+        </div>
+
+        <div class="option">
+          <strong>🏨 Hotel Rooms</strong>
+          <p>Prefer a cozy hotel? Lanett, AL and West Point, GA have great options nearby.</p>
+          
+          <strong style="margin-top: 1rem; color: #1a1a1a; font-size: 0.95rem;">Hampton Inn & Suites Lanett-West Point</strong>
+          <a href="https://www.reservationdesk.com/hotel/5fa9854/hampton-stes-lanett-west-pt-al-lanett-al/?cid=sem::TPRD::BA::Reservation%20Desk%20%3E%20US%20%3E%20South%20%3E%20Alabama::US%20%3E%20Alabama%20%3E%20Lanett%20%3E%20Hampton%20Inn%20%26%20Suites%20Lanett-West%20Point%20%3E%20did-5fa9854%20%3E%20100309076::hampton%20inn%20%26%20suites%20lanett%20west%20point::e&creative=75660303000342&device=c&utm_source=bing&utm_medium=cpc&utm_term=hampton%20inn%20%26%20suites%20lanett%20west%20point&utm_campaign=Reservation%20Desk%20%3E%20US%20%3E%20South%20%3E%20Alabama&iv_=__iv_m_e_c_75660303000342_k_75660341729378_w_kwd-75660341729378:loc-4089_g_1210562594657267_n_o_e__h_72322_ii_46124_p_2_b_be_d_c_vi__&msclkid=efe485af4eeb1daf557aef8f1cb34943" class="btn">Book Hotel</a>
+
+          <strong style="margin-top: 1rem; color: #1a1a1a; font-size: 0.95rem;">More Options in Lanett & West Point</strong>
+          <a href="https://www.airbnb.com/s/Lanett--AL/homes?refinement_paths%5B%5D=%2Fhomes&place_id=ChIJF75cLZajjIgRGbJ3mlsI0uk&location=Lanett%2C+AL&checkin=2026-07-24&checkout=2026-07-27&date_picker_type=calendar&adults=8&children=0" class="btn">Browse Airbnb</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2><i class="ti ti-fish"></i> Don't Forget!</h2>
+      <p>Pack these essentials for the perfect lakeside birthday celebration:</p>
+      <div class="checklist">
+        <div class="checklist-item"><i class="ti ti-check"></i> <span>Fishing poles & rods</span></div>
+        <div class="checklist-item"><i class="ti ti-check"></i> <span>Beverages (your favorites!)</span></div>
+        <div class="checklist-item"><i class="ti ti-check"></i> <span>Floaties & tubes</span></div>
+        <div class="checklist-item"><i class="ti ti-check"></i> <span>Sunscreen & hats</span></div>
+        <div class="checklist-item"><i class="ti ti-check"></i> <span>Camping chairs</span></div>
+        <div class="checklist-item"><i class="ti ti-check"></i> <span>Towels & beach gear</span></div>
+        <div class="checklist-item"><i class="ti ti-check"></i> <span>Birthday spirit! 🎂</span></div>
+        <div class="checklist-item"><i class="ti ti-check"></i> <span>Flashlights & bug spray</span></div>
+      </div>
+    </section>
+
+    <section class="rsvp-section">
+      <h2>Please RSVP by July 10, 2026</h2>
+      <p>Let us know if you're coming so we can plan food, beverages, and activities!</p>
+      <div class="contact-info">
+        <div class="contact-item">
+          <i class="ti ti-mail"></i>
+          <a href="mailto:deshbagley@gmail.com">deshbagley@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <i class="ti ti-phone"></i>
+          <span>(813) 453-8612</span>
+        </div>
+      </div>
+      <p style="margin-top: 1.5rem; font-size: 1.1rem;">Can't wait to celebrate with you! 🎉</p>
+    </section>
+  </div>
+</body>
+</html>
